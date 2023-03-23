@@ -6,7 +6,6 @@
       <class name="com.automationtesting.OrderCompleteTest">
         <methods>
           <include name="setup"/>
-          <include name="tearDown"/>
           <include name="endToEndTest"/>
         </methods>
       </class> <!-- com.automationtesting.OrderCompleteTest -->

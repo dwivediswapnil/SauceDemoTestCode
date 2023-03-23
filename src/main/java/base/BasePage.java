@@ -1,4 +1,5 @@
 package base;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -14,10 +15,17 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+
 public class BasePage {
 
 	public static WebDriver driver;
-	private String url;
+//	private String url;
+//	private String uname;
+//	private String pword;
+//	private String cmsg;
+//	private String imgName;
+//	private String omsg;
+//	private String lname;
 	private Properties prop;
 
 	public BasePage() throws IOException {
@@ -48,16 +56,63 @@ public class BasePage {
 		return driver;
 	}
 
+	public String getActualErrorAttribute() throws IOException {
+		return prop.getProperty("loginErrrorAttribute");
+
+	}
+
 	public String getUrl() throws IOException {
-		url = prop.getProperty("url");
-		return url;
+		return prop.getProperty("url");
+
+	}
+
+	public String getUsername() throws IOException {
+		return prop.getProperty("username");
+
+	}
+
+	public String getLockedOutUsername() throws IOException {
+		return prop.getProperty("lockedUsername");
+
+	}
+
+	public String getPassword() throws IOException {
+		return prop.getProperty("password");
+
+	}
+
+	public String getFirstName() throws IOException {
+		return prop.getProperty("firstName");
+	}
+
+	public String getLastName() throws IOException {
+		return prop.getProperty("lastName");
+
+	}
+
+	public String getPostalCode() throws IOException {
+		return prop.getProperty("postalCode");
+	}
+
+	public String getActualConfirmationMessage() throws IOException {
+		return prop.getProperty("confirmationMessage");
+
+	}
+
+	public String getActualOrderStateConfirmationMessage() throws IOException {
+		return prop.getProperty("orderStateConfirmationText");
+
+	}
+
+	public String getImageName() throws IOException {
+		return prop.getProperty("imageName");
+
 	}
 
 	public void takeSnapShot(String name) throws IOException {
 		File srcFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 
-		File destFile = new File(System.getProperty("user.dir") + "\\target\\screenshots\\"
-				+ timestamp() + ".png");
+		File destFile = new File(System.getProperty("user.dir") + "\\target\\screenshots\\" + timestamp() + ".png");
 
 		FileUtils.copyFile(srcFile, destFile);
 	}
