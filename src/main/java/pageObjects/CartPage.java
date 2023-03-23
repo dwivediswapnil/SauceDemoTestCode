@@ -25,7 +25,6 @@ public class CartPage {
 	}
 
 	public String priceForFirstProduct() {
-		System.out.println(driver.findElement(priceForFirstItem).getText().trim());
 		return driver.findElement(priceForFirstItem).getText().trim();
 	}
 

@@ -46,11 +46,8 @@ public class OrderCompleteTest extends BasePage {
 		loginPage.usernameEntry().sendKeys(getUsername());
 		loginPage.passwordEntry().sendKeys(getPassword());
 		loginPage.loginButton().click();
-		System.out.println("Login Page ended");
 		Homepage homePage = new Homepage(driver);
-		System.out.println("Home Page started");
 		homePage.inventoryListSelection();
-		System.out.println("Home Page ended");
 		homePage.goToCartIcon().click();
 
 		CartPage cartPage = new CartPage(driver);

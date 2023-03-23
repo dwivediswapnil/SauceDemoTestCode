@@ -19,13 +19,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class BasePage {
 
 	public static WebDriver driver;
-//	private String url;
-//	private String uname;
-//	private String pword;
-//	private String cmsg;
-//	private String imgName;
-//	private String omsg;
-//	private String lname;
 	private Properties prop;
 
 	public BasePage() throws IOException {
